@@ -145,6 +145,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* disable the double touch zoom-in */
+    touch-action: manipulation;
 }
 #scores {
     text-align: center;
