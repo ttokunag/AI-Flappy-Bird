@@ -46,7 +46,12 @@ function preload() {
 }
 
 function setup() {
-  nnCanvas = createCanvas(windowWidth / 1.5, windowHeight / 1.6);
+  if (windowWidth <= 400) {
+    nnCanvas = createCanvas(windowWidth, windowHeight / 1.6);
+  } else {
+    nnCanvas = createCanvas(windowWidth / 1.5, windowHeight / 1.6);
+  }
+  nnCanvas.mousePressed(canvasPressed);
   nnCanvas.parent('nn-sketch');
   // playerBird = new Bird();
   for (let i = 0; i < TOTAL; i++) { // initializes birds
@@ -301,6 +306,19 @@ function keyPressed() {
     resetGame();
   }
   else if (!gameIsOver && playMode && key == ' ') {
+    if (playerPaused) {
+      playerPaused = false;
+    }
+    playerBird.up();
+  }
+}
+
+function canvasPressed() {
+  if (gameIsOver) {
+    gameIsOver = false;
+    resetGame();
+  }
+  else if (!gameIsOver && playMode) {
     if (playerPaused) {
       playerPaused = false;
     }

@@ -93,7 +93,7 @@
 }
 .slider {
     -webkit-appearance: none;
-    width: 10%;
+    width: 20%;
     height: 7.5px;
     border:0.09em solid #000000;
     border-radius: 5px;  
@@ -148,7 +148,7 @@
 }
 #scores {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 #site-title {
     font-size: 20pt;
